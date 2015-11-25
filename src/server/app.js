@@ -7,7 +7,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var swig = require('swig');
 
-
 // *** routes *** //
 var routes = require('./routes/index.js');
 
@@ -16,10 +15,13 @@ var routes = require('./routes/index.js');
 var app = express();
 
 
+//*** socket.io *** //
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+
+
 // *** view engine *** //
-var swig = new swig.Swig();
-app.engine('html', swig.renderFile);
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 
 
 // *** static directory *** //
