@@ -18,10 +18,14 @@ var app = express();
 //*** socket.io *** //
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-
+io.on('connection', function(socket){
+  console.log("someone entered the chat room!");
+});
 
 // *** view engine *** //
-app.set('view engine', 'ejs');
+var swig = new swig.Swig();
+app.engine('html', swig.renderFile);
+app.set('view engine', 'html');
 
 
 // *** static directory *** //
