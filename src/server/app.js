@@ -14,14 +14,6 @@ var routes = require('./routes/index.js');
 // *** express instance *** //
 var app = express();
 
-
-//*** socket.io *** //
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
-io.on('connection', function(socket){
-  console.log("someone entered the chat room!");
-});
-
 // *** view engine *** //
 var swig = new swig.Swig();
 app.engine('html', swig.renderFile);
