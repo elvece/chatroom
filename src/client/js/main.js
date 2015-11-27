@@ -5,6 +5,6 @@ $(document).on('ready', function() {
 });
 
 
-$(function() {
-  var socket = io();
-});
+// $(function() {
+//   var socket = io();
+// });

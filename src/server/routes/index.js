@@ -7,8 +7,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-io.on('connection', function(socket){
-  console.log("someone entered the chat room!");
-});
+// io.on('connection', function(socket){
+//   console.log("someone entered the chat room!");
+// });
 
 module.exports = router;
